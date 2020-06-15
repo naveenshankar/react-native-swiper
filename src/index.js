@@ -267,10 +267,10 @@ export default class extends Component {
 
     initState.dir = props.horizontal === false ? 'y' : 'x'
 
-    if (props.width) {
-      initState.width = props.width
-    } else if (this.state && this.state.width) {
+    if (this.state && this.state.width) {
       initState.width = this.state.width
+    } else if (props.width) {
+      initState.width = props.width
     } else {
       initState.width = width
     }
