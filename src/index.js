@@ -512,7 +512,7 @@ export default class extends Component {
         this.setState(newState, cb)
       }
     } else {
-        this.setState(newState, cb)
+      this.setState(newState, cb)
     }
   }
 
