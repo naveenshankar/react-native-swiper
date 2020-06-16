@@ -476,7 +476,7 @@ export default class extends Component {
     // parseInt() ensures it's always an integer
     index = parseInt(index + Math.round(diff / step))
 
-    const { loop, partialAdjacentSlides } = this.props;
+    const { loop } = this.props;
 
     if (loop) {
       if (index <= -1) {
@@ -514,9 +514,7 @@ export default class extends Component {
         this.setState(newState, cb)
       }
     } else {
-      if(!partialAdjacentSlides) {
         this.setState(newState, cb)
-      }
     }
   }
 
