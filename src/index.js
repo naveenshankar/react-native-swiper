@@ -266,7 +266,7 @@ export default class extends Component {
     const { width, height } = Dimensions.get('window')
 
     initState.dir = props.horizontal === false ? 'y' : 'x'
-
+    
     if (this.state && this.state.width) {
       initState.width = this.state.width
     } else if (props.width) {
@@ -476,7 +476,9 @@ export default class extends Component {
     // parseInt() ensures it's always an integer
     index = parseInt(index + Math.round(diff / step))
 
-    if (this.props.loop) {
+    const { loop, partialAdjacentSlides } = this.props;
+
+    if (loop) {
       if (index <= -1) {
         index = state.total - 1
         offset[dir] = step * state.total
@@ -512,7 +514,9 @@ export default class extends Component {
         this.setState(newState, cb)
       }
     } else {
-      this.setState(newState, cb)
+      if(!partialAdjacentSlides) {
+        this.setState(newState, cb)
+      }
     }
   }
 
