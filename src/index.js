@@ -104,13 +104,13 @@ export default class extends Component {
   static propTypes = {
     horizontal: PropTypes.bool,
     children: PropTypes.node.isRequired,
-    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
     style: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.number,
       PropTypes.array
     ]),
-    scrollViewStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    scrollViewStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
     pagingEnabled: PropTypes.bool,
     showsHorizontalScrollIndicator: PropTypes.bool,
     showsVerticalScrollIndicator: PropTypes.bool,
